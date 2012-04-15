@@ -1,0 +1,11 @@
+/*
+Birthday paradox:
+
+In a room of just 23 people there’s a 50-50 chance of two people having the same birthday. In a room of 75 there’s a 99.9% chance of two people matching.
+
+2 people having different bday - > 364/365
+23 people -> 253 different pairs.
+Chance of 253 people having different bday -> (364/365) ^ 253 = 0.4995
+1 - 0.4995 = 0.5005 => 2 people having same bday.
+
+*/
