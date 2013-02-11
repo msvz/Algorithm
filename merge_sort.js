@@ -1,22 +1,21 @@
 function RandomArray(size) {
-	var arr = [];
-	for (var i = 0; i < size; i++) {
-		arr.push(Math.ceil(Math.random() * 100));
-	}
-	return arr;
+  var arr = [];
+  for (var i = 0; i < size; i++) {
+    arr.push(Math.ceil(Math.random() * 100));
+  }
+  return arr;
 }
 
 function mergesort(m) {
-	if (m.length < 2) {
-		return m;
-	} else {
-		var middle = Math.floor(m.length / 2),
-			left = mergesort(m.slice(0, middle)),
-			right = mergesort(m.slice(middle));
-			result = merge(left, right);
-			
-		return result;
-	}
+  if (m.length < 2) {
+    return m;
+  } else {
+    var middle = Math.floor(m.length / 2),
+        left = mergesort(m.slice(0, middle)), // slice takes 2nd param as length.
+        right = mergesort(m.slice(middle)),
+        result = merge(left, right);
+    return result;
+  }
 }
 
 // Given 2 sorted arrays, do the merge.
@@ -49,5 +48,5 @@ function merge(left_array, right_array) {
 }
 
 var arr = RandomArray(10);
-console.log(arr);
-mergesort(arr);
+console.log("Original Array: " + arr);
+console.log("Sorted Array: " + mergesort(arr));
