@@ -8,14 +8,14 @@ function Node(data, link) {
 
 function LinkedList(node) {  
 	this.head = node || null;
-	if (this.head === null) this.count = 0;
-	else this.count = 1;
+	this.count = this.head === null ? 0 : 1;
 }
 
+// Traverse the list and add at the end
 LinkedList.prototype.append = function(node) {	
-	if (this.head === null) {// Traverse the list and add at the end
+	if (this.head === null) {
 		this.head = node;
-    this.count++;
+    	this.count++;
 		return;
 	}
 	var temp = this.head;
@@ -28,6 +28,8 @@ LinkedList.prototype.append = function(node) {
 }
 
 LinkedList.prototype.deleteElement = function(node) {
+   console.log("Deleting the node : " + node.data);
+
    if (this.head === node) {
     var new_head = this.head.link;
     delete this.head['data'];
@@ -53,6 +55,7 @@ LinkedList.prototype.deleteElement = function(node) {
 }
 
 LinkedList.prototype.display = function() {
+	console.log("Here're the list of nodes : ")
 	var temp = this.head,
 		list_items = [];
 	
@@ -64,6 +67,7 @@ LinkedList.prototype.display = function() {
 }
 
 LinkedList.prototype.reverse = function() {
+	console.log("Reversing the linked list");
 	// a -> b -> c
 	var prev = null,
 		curr = this.head, 
