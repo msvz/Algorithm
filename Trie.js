@@ -95,7 +95,7 @@ names.forEach(function (item)
 });
 
 console.log(tree.exists("annay"));
-console.log(tree.exists("Gaurang"));
+console.log(tree.exists("Jonathan")); 
 
 console.log(tree);
 
